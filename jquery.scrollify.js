@@ -515,16 +515,13 @@ if touchScroll is false - update index
 
 		util = {
 			refresh:function(withCallback,scroll) {
-				clearTimeout(timeoutId2);
-				timeoutId2 = setTimeout(function() {
-					//retain position
-					sizePanels(true);
-					//scroll, firstLoad
-					calculatePositions(scroll,false);
-					if(withCallback) {
-							settings.afterResize();
-					}
-				},400);
+				//retain position
+				sizePanels(true);
+				//scroll, firstLoad
+				calculatePositions(scroll,false);
+				if(withCallback) {
+						settings.afterResize();
+				}
 			},
 			handleUpdate:function() {
 				//callbacks, scroll
